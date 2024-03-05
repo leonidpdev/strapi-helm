@@ -1,0 +1,15 @@
+apiVersion: v1
+entries:
+  strapi:
+  - apiVersion: v2
+    appVersion: 4.20.3
+    created: "2024-03-05T11:14:35.294241662+02:00"
+    description: Strapi is an open-source, fully customizable, and extensible JavaScript-based
+      headless CMS.
+    digest: 7bd559566cfe0af7d0a6f8eb8df1b538dd166cf984aa080c83c442ed3926e6e7
+    name: strapi
+    type: application
+    urls:
+    - https://leonidpdev.github.io/strapi-helm/strapi-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-03-05T11:14:35.293170996+02:00"
