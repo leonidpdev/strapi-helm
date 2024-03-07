@@ -71,15 +71,6 @@ resources: {}
   #   cpu: 100m
   #   memory: 128Mi
 
-livenessProbe:
-  httpGet:
-    path: /
-    port: http
-readinessProbe:
-  httpGet:
-    path: /
-    port: http
-
 autoscaling:
   enabled: false
   minReplicas: 1
@@ -88,17 +79,14 @@ autoscaling:
   # targetMemoryUtilizationPercentage: 80
 
 # Additional volumes on the output Deployment definition.
-volumes: []
-# - name: foo
-#   secret:
-#     secretName: mysecret
-#     optional: false
+volumes:
+  - name: strapi-uploads
+    size: 4Gi
 
 # Additional volumeMounts on the output Deployment definition.
-volumeMounts: []
-# - name: foo
-#   mountPath: "/etc/foo"
-#   readOnly: true
+volumeMounts:
+  - name: strapi-uploads
+    mountPath: /opt/app/public/uploads
 
 nodeSelector: {}
 
@@ -108,22 +96,21 @@ affinity: {}
 
 strapi:
   env:
-    - BASE_URL: "http://example.com"
-    - NODE_ENV: "production"
+    - BASE_URL: "http://localhost:1337/"
+    - NODE_ENV: "development"
     - APP_KEYS: "changeme"
-    - ADMIN_PASSWORD: "changeme"
-    - ADMIN_EMAIL: "admin@example.com"
     - ADMIN_JWT_SECRET: "changeme"
     - JWT_SECRET: "changeme"
-    - DATABASE_CLIENT: "postgres"
-    - DATABASE_HOST: "db"
+    - DATABASE_CLIENT: postgres
+    - DATABASE_HOST: "postgres-postgresql.default.svc.cluster.local"
     - DATABASE_PORT: 5432
-    - DATABASE_NAME: "strapi"
+    - DATABASE_NAME: "postgres"
     - DATABASE_USERNAME: "postgres"
     - DATABASE_PASSWORD: "changeme"
     - SMTP_HOST: "127.0.0.1"
-    - SMTP_PORT: 25
-    - SMTP_AUTH_STRATEGY: "NONE"
-    - SMTP_FROM_EMAIL: "mail@example.com"
+    - SMTP_PORT: "25"
+    - SMTP_USERNAME: "changeme"
+    - SMTP_PASSWORD: "changeme"
+    - SMTP_FROM_EMAIL: "strapi@example.com"
     - API_TOKEN_SALT: "changeme"
     - TRANSFER_TOKEN_SALT: "changeme"
