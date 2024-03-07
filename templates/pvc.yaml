@@ -1,0 +1,13 @@
+apiVersion: "v1"
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "strapi.fullname" . }}-uploads
+  labels:
+    {{- include "strapi.labels" . | nindent 4 }}
+spec:
+ storageClassName: standard-rwo
+ accessModes:
+    - ReadWriteOnce
+ resources:
+   requests:
+     storage: {{ .Values.strapi.uploadsVolumeCapacity | quote }}
