@@ -3,7 +3,18 @@ entries:
   strapi:
   - apiVersion: v2
     appVersion: 4.20.3
-    created: "2024-03-07T16:17:25.849945293+02:00"
+    created: "2024-03-07T16:52:42.655547323+02:00"
+    description: Strapi is an open-source, fully customizable, and extensible JavaScript-based
+      headless CMS.
+    digest: afea95f749f73fdf862960d0a77ee25ab9f35cdc13ad3fd718e7f0b91a76113a
+    name: strapi
+    type: application
+    urls:
+    - https://leonidpdev.github.io/strapi-helm/strapi-0.5.0.tgz
+    version: 0.5.0
+  - apiVersion: v2
+    appVersion: 4.20.3
+    created: "2024-03-07T16:52:42.654534461+02:00"
     description: Strapi is an open-source, fully customizable, and extensible JavaScript-based
       headless CMS.
     digest: 9e9e6581673ae73085c15e180a7ac0826be4392bf0c2f82d622dc887d670e8a5
@@ -14,7 +25,7 @@ entries:
     version: 0.4.0
   - apiVersion: v2
     appVersion: 4.20.3
-    created: "2024-03-07T16:17:25.84892966+02:00"
+    created: "2024-03-07T16:52:42.653775988+02:00"
     description: Strapi is an open-source, fully customizable, and extensible JavaScript-based
       headless CMS.
     digest: ba48487984af2b8a5d232888e47bc30ea5df14071f4927b6b476a35734127232
@@ -25,7 +36,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 4.20.3
-    created: "2024-03-07T16:17:25.848179224+02:00"
+    created: "2024-03-07T16:52:42.65323177+02:00"
     description: Strapi is an open-source, fully customizable, and extensible JavaScript-based
       headless CMS.
     digest: b1f7a38e7bc821a1eec037c87bc7370b2d92d5fdff0859e3aaa798ac3187b543
@@ -36,7 +47,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 4.20.3
-    created: "2024-03-07T16:17:25.847598033+02:00"
+    created: "2024-03-07T16:52:42.652782551+02:00"
     description: Strapi is an open-source, fully customizable, and extensible JavaScript-based
       headless CMS.
     digest: 7bd559566cfe0af7d0a6f8eb8df1b538dd166cf984aa080c83c442ed3926e6e7
@@ -45,4 +56,4 @@ entries:
     urls:
     - https://leonidpdev.github.io/strapi-helm/strapi-0.1.0.tgz
     version: 0.1.0
-generated: "2024-03-07T16:17:25.846949104+02:00"
+generated: "2024-03-07T16:52:42.652271301+02:00"
