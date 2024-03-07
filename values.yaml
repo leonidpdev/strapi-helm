@@ -78,6 +78,16 @@ autoscaling:
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 
+# Additional volumes on the output Deployment definition.
+volumes:
+  - name: strapi-uploads
+    size: 4Gi
+
+# Additional volumeMounts on the output Deployment definition.
+volumeMounts:
+  - name: strapi-uploads
+    mountPath: /opt/app/public/uploads
+
 nodeSelector: {}
 
 tolerations: []
@@ -85,7 +95,6 @@ tolerations: []
 affinity: {}
 
 strapi:
-  uploadsVolumeCapacity: "4Gi"
   env:
     - BASE_URL: "http://localhost:1337/"
     - NODE_ENV: "development"
