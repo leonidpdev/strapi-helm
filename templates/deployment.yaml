@@ -49,14 +49,13 @@ spec:
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          {{- with .Values.volumeMounts }}
           volumeMounts:
-            {{- toYaml . | nindent 12 }}
-          {{- end }}
-      {{- with .Values.volumes }}
+            - mountPath: "/opt/app/public/uploads"
+              name: {{ include "strapi.fullname" . }}-uploads
       volumes:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
+        - name: strapi-uploads
+          persistentVolumeClaim:
+            claimName: {{ include "strapi.fullname" . }}-uploads
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
